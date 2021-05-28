@@ -32,3 +32,6 @@ http://idea.medeming.com/a/jihuoma1.zip
 
 > 下载资源为`.ts`格式，使用 `QuickTime Player` 或 `PotPlayer` 播放
 
+#### [mysecret](https://github.com/stellae216/useful-tools/blob/main/mysecret/mysecret.py)
+
+随机生成指定长度伪随机密码
