@@ -35,3 +35,8 @@ http://idea.medeming.com/a/jihuoma1.zip
 #### [mysecret](https://github.com/stellae216/useful-tools/blob/main/mysecret/mysecret.py)
 
 随机生成指定长度伪随机密码
+
+
+#### [getseal](https://github.com/stellae216/useful-tools/blob/main/getseal/getseal.py) - 扣取印章
+
+运行程序: `python getseal.py -i source.png -o out.png`
