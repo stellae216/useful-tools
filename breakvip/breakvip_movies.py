@@ -1,15 +1,24 @@
 import os
 import sys
 import re
+import time
 import argparse
 import requests
 
 
+headers = {
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.8',
+    'Cache-Control': 'max-age=0',
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36',
+    'Connection': 'keep-alive',
+    'Referer': 'http://www.breakvip.com/'
+}
+
+
 def get_web_content(web_url: str) -> str:
     """获取web内容"""
-    headers = {
-        "User-Agent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)",
-    }
+
     response = requests.get(web_url, headers=headers)
     if response.status_code == 200:
         return response.text
@@ -35,7 +44,8 @@ if __name__ == '__main__':
     web_content = get_web_content(args.address)
     source_url = find_mv_source_url(web_content)
     mv_name = source_url.rsplit('/', 1)[-1]
-    mv_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), mv_name + '.ts')
+    # mv_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), mv_name + '.ts')
+    mv_save_path = os.path.join("/Users/deathfeeling/Downloads/Blu-ray Movies", mv_name + '.ts')
     with open(mv_save_path, 'wb') as f:
         i = 0
         flag = None
@@ -44,7 +54,7 @@ if __name__ == '__main__':
                 break
             part_url = f'{source_url}/{mv_name}.{i:>06}.ts'
             print(f'{i}.request {part_url}')
-            r = requests.get(part_url)
+            r = requests.get(part_url, headers=headers)
             code = r.status_code
             if code == 200:
                 f.write(r.content)
@@ -57,6 +67,7 @@ if __name__ == '__main__':
                 print(f'下载失败：{part_url}')
                 sys.exit(0)
             i = i + 1
+            # time.sleep(0.1)
 
     print(f'下载完成，电影保存位置：{mv_save_path}')
 
