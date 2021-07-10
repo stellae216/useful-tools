@@ -38,15 +38,21 @@ if __name__ == '__main__':
     mv_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), mv_name + '.ts')
     with open(mv_save_path, 'wb') as f:
         i = 0
+        flag = None
         while True:
+            if flag is True:
+                break
             part_url = f'{source_url}/{mv_name}.{i:>06}.ts'
             print(f'{i}.request {part_url}')
             r = requests.get(part_url)
             code = r.status_code
             if code == 200:
                 f.write(r.content)
+                flag = False
             elif code == 404:
-                break
+                # 可能出现开始起始资源404的情况。修改策略为：成功下载资源后，再次出现404为结束。
+                if flag is False:
+                    flag = True
             else:
                 print(f'下载失败：{part_url}')
                 sys.exit(0)
