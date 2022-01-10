@@ -16,7 +16,7 @@ python jets_code.py --url http://idea.medeming.com/jets/images/jihuoma.zip
 激活码地址:
 http://idea.medeming.com/jets/images/jihuoma.zip
 
-Pycharm:
+Pycharm/Goland:
 http://idea.medeming.com/a/jihuoma2.zip
 
 Webstorm:
