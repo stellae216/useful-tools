@@ -25,7 +25,7 @@ Webstorm:
 http://idea.medeming.com/a/jihuoma3.zip
 
 IDEA:
-http://idea.medeming.com/a/jihuoma1.zip
+https://idea.medeming.com/a/jihuoma.zip
 ```
 
 #### [breakvip](https://github.com/stellae216/useful-tools/blob/main/breakvip/breakvip_movies.py)  - 解析[布雷克影院](http://www.breakvip.com/)电影资源并下载到本地
