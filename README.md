@@ -1,4 +1,5 @@
 # useful-tools
+
 Organize and collect some useful daily tools
 
 所有工具脚本均在`python3.8.2`下测试运行，安装依赖环境`pip install -r requirement.txt`
@@ -8,6 +9,7 @@ Organize and collect some useful daily tools
 激活码有效期比较短，过期需要重新下载。运行需要添加激活码地址参数。
 
 示例:
+
 ```python
 python jets_code.py --url http://idea.medeming.com/jets/images/jihuoma.zip
 ```
@@ -35,7 +37,6 @@ http://idea.medeming.com/a/jihuoma1.zip
 #### [mysecret](https://github.com/stellae216/useful-tools/blob/main/mysecret/mysecret.py)
 
 随机生成指定长度伪随机密码
-
 
 #### [getseal](https://github.com/stellae216/useful-tools/blob/main/getseal/getseal.py) - 扣取印章
 
