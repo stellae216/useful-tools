@@ -2,8 +2,9 @@ import os
 import sys
 import re
 import time
-import argparse
 import requests
+
+from tools.tools import MyArgParse
 
 
 headers = {
@@ -36,12 +37,11 @@ def find_mv_source_url(html: str) -> str:
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-a", "--address", help="input breakvip online address")
-    args = parser.parse_args()
-    if not args.address:
-        sys.exit('请将影院地址作为参数传入，例如：--address www.google.com')
-    web_content = get_web_content(args.address)
+    p = MyArgParse()
+    p.set_argparse(argv=["-a", "--address"],
+                   help_msg="input breakvip online address")
+    web_address = p.get_arg_value("address")
+    web_content = get_web_content(web_address)
     source_url = find_mv_source_url(web_content)
     mv_name = source_url.rsplit('/', 1)[-1]
     # mv_save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), mv_name + '.ts')

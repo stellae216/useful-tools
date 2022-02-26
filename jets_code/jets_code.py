@@ -1,20 +1,18 @@
 import requests
-import argparse
 import sys
 import os
+
+from tools.tools import MyArgParse
 
 
 class RunArgsError(Exception):
     pass
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--url", help="jetbrains code url")
-args = parser.parse_args()
-url = args.url
-if not url:
-    raise RunArgsError("运行参数错误")
-
+p = MyArgParse()
+p.set_argparse(argv=["--url"],
+               help_msg="jetbrains code url")
+url = p.get_arg_value("url")
 r = requests.get(url)
 if r.status_code != 200:
     print('激活码下载失败！')
