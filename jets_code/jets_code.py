@@ -2,7 +2,7 @@ import requests
 import sys
 import os
 
-from tools.tools import MyArgParse
+from tools.myargparse import MyArgParse
 
 
 class RunArgsError(Exception):

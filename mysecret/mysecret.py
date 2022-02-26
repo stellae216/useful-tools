@@ -1,18 +1,17 @@
 import secrets
 import string
-import argparse
+
+from tools.myargparse import MyArgParse
 
 
 class MissLengthParamError(Exception):
     pass
 
 
-parse = argparse.ArgumentParser()
-parse.add_argument("-n", help="生成随机密码长度")
-args = parse.parse_args()
-if not args.n:
-    raise MissLengthParamError("缺少长度参数，try '-n <length>'")
-length = int(args.n)
+p = MyArgParse()
+p.set_argparse(argv=["-n"],
+               help_msg="生成随机密码长度")
+length = p.get_arg_value("n")
 characters = string.ascii_letters + string.digits
-bad_password = ''.join(secrets.choice(characters) for _ in range(length))
+bad_password = ''.join(secrets.choice(characters) for _ in range(int(length)))
 print(bad_password)

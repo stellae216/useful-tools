@@ -2,4 +2,5 @@
 .idea/*
 .DS_Store
 env/
+tools/__pycache__/
 jihuoma*

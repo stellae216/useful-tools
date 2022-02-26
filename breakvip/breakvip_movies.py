@@ -4,7 +4,7 @@ import re
 import time
 import requests
 
-from tools.tools import MyArgParse
+from tools.myargparse import MyArgParse
 
 
 headers = {
