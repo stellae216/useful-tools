@@ -41,3 +41,8 @@ https://idea.medeming.com/a/jihuoma.zip
 #### [getseal](https://github.com/stellae216/useful-tools/blob/main/getseal/getseal.py) - 扣取印章
 
 运行程序: `python getseal.py -i source.png -o out.png`
+
+
+#### [series_match_subtitle](https://github.com/stellae216/useful-tools/blob/main/series_match_subtitle/match_movie_and_subtitle.py) - 视频匹配字幕
+
+匹配视频和字幕，根据匹配字幕信息，新建同名字幕到视频同目录
