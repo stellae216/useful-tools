@@ -3,13 +3,13 @@
 import os
 
 # 视频示例
-movie_dir = "C:\Movies\来自深渊\来自深渊：烈日的黄金乡 第2季"
-movie_example = "[Erai-raws] Made in Abyss - Retsujitsu no Ougonkyou - 01 [1080p][29701495].mkv"
-movie_target = "01"
+movie_dir = "C:\Movies\龙之家族 第一季"
+movie_example = "House.of.the.Dragon.S01E01.2160p.HMAX.WEB-DL.x265.10bit.HDR.DDP5.1.Atmos-SMURF.mkv"
+movie_target = "E01"
 # 字幕示例
-subtitle_dir = os.path.join(movie_dir, "zimu")
-subtitle_example = "1661232529516-07.ass"
-subtitle_target = "07"
+subtitle_dir = os.path.join(movie_dir, "衣柜字幕组")
+subtitle_example = "House.of.the.Dragon.S01E01.1080p.WEBRip.x265-RARBG.ass"
+subtitle_target = "E01"
 subtitle_end = ".ass"
 
 
